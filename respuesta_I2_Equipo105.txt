@@ -1,1 +1,5 @@
+c. ¿Puede GAMMA actualizar su FORK al estado del fork de ALFA?
+lo mismo que anterior, no directamente.
 
+d. ¿Los datos que tenía en mi repositorio, editados por mí, se pierden si quiero actualizar el fork?
+solo si no hay merge adecuado, o si hacés un hard reset. Si hacés merge, se conservan los cambios si no hay conflicto.
