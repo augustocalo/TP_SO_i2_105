@@ -11,7 +11,7 @@ D)solo si no hay merge adecuado, o si hacés un hard reset. Si hacés merge, se 
 
 E)  
 1. BETA – Calo Augusto
---------------------------------------
+
 git clone https://github.com/BETA/TP_SO_i2_Equipo.git
 cd TP_SO_i2_Equipo
 echo "Este archivo será editado por GAMMA y ALFA" > fork.txt
@@ -27,6 +27,7 @@ echo "Buenaventura Martina - 192.168.0.101 - $(date)" >> fork.txt
 git add fork.txt
 git commit -m "GAMMA: Agrega nombre, IP y hora"
 git push
+
  3. ALFA – Richelme Santino
 
 git clone https://github.com/ALFA/TP_SO_i2_Equipo.git
