@@ -1,1 +1,6 @@
+a) Para actualizar mi fork, uso
+git fetch upstream  
+git merge upstream/main  
+git push origin main  
 
+b) No. ALFA no puede actualizar su fork desde el de GAMMA, solo desde el original (BETA), salvo que agregue manualmente el repo de GAMMA como remoto.
