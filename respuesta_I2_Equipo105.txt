@@ -1,5 +1,59 @@
-c. ¿Puede GAMMA actualizar su FORK al estado del fork de ALFA?
-lo mismo que anterior, no directamente.
+A) Para actualizar mi fork, uso
+git fetch upstream
+git merge upstream/main
+git push origin main
 
-d. ¿Los datos que tenía en mi repositorio, editados por mí, se pierden si quiero actualizar el fork?
-solo si no hay merge adecuado, o si hacés un hard reset. Si hacés merge, se conservan los cambios si no hay conflicto.
+B) No. ALFA no puede actualizar su fork desde el de GAMMA, solo desde el original (BETA), salvo que agregue manualmente el repo de GAMMA como remoto.
+
+C) lo mismo que anterior, no directamente.
+
+D)solo si no hay merge adecuado, o si hacés un hard reset. Si hacés merge, se conservan los cambios si no hay conflicto.
+
+E)  
+1. BETA – Calo Augusto
+--------------------------------------
+git clone https://github.com/BETA/TP_SO_i2_Equipo.git
+cd TP_SO_i2_Equipo
+echo "Este archivo será editado por GAMMA y ALFA" > fork.txt
+git add fork.txt
+git commit -m "BETA: Agrega archivo fork.txt"
+git push
+
+ 2. GAMMA – Buenaventura Martina
+
+git clone https://github.com/GAMMA/TP_SO_i2_Equipo.git
+cd TP_SO_i2_Equipo
+echo "Buenaventura Martina - 192.168.0.101 - $(date)" >> fork.txt
+git add fork.txt
+git commit -m "GAMMA: Agrega nombre, IP y hora"
+git push
+ 3. ALFA – Richelme Santino
+
+git clone https://github.com/ALFA/TP_SO_i2_Equipo.git
+cd TP_SO_i2_Equipo
+echo "Richelme Santino - 192.168.0.102 - $(date)" >> fork.txt
+git add fork.txt
+git commit -m "ALFA: Agrega nombre, IP y hora"
+git push
+ 
+4. BETA – Calo Augusto (nuevo archivo)
+
+cd TP_SO_i2_Equipo
+echo "Este es un nuevo dato importante" > NuevoDato.txt
+git add NuevoDato.txt
+git commit -m "BETA: Agrega NuevoDato.txt"
+git push
+ 5. GAMMA – Buenaventura Martina (actualiza desde BETA)
+
+cd TP_SO_i2_Equipo
+git remote add upstream https://github.com/BETA/TP_SO_i2_Equipo.git
+git fetch upstream
+git merge upstream/main
+git push
+ 6. ALFA – Richelme Santino (actualiza desde BETA)
+
+cd TP_SO_i2_Equipo
+git remote add upstream https://github.com/BETA/TP_SO_i2_Equipo.git
+git fetch upstream
+git merge upstream/main
+git push
